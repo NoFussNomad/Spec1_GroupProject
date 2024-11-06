@@ -1,0 +1,154 @@
+#include<stdio.h>
+
+int main() {
+    int choice;
+    char z;
+do {
+    printf("\n\n\nWelcome!\n");
+    printf("Choose The Tool You Want To Use:\n");
+    printf("1. Currency Converter\n");
+    printf("2. Meters To Kilometers Converter\n");
+    printf("3. Calculate Speed\n");
+    printf("4. Calculate Time\n");
+    printf("5. Basic Calculator\n");
+    printf("Enter Your Choice (1-5): ");
+    scanf("%d", &choice);
+    
+    switch(choice) {
+        case 1: {
+            int choice2;
+            float usd = 58.25;
+            float peso = 1 / usd;
+            float amount, converted;
+            
+            printf("1. USD to PHP\n");
+            printf("2. PHP to USD\n");
+            printf("Enter Your Choice (1-2): ");
+            scanf("%d", &choice2);
+            
+            switch(choice2) {
+                case 1:
+                    printf("Enter Amount in USD: ");
+                    scanf("%f", &amount);
+                    converted = amount * usd;
+                    printf("%.2f USD is %.2f PHP\n", amount, converted);
+                    break;
+                case 2:
+                    printf("Enter Amount in PHP: ");
+                    scanf("%f", &amount);
+                    converted = amount * peso;
+                    printf("%.2f PHP is %.2f USD\n", amount, converted);
+                    break;
+                default:
+                    printf("Invalid choice\n");
+            }
+            break;
+        }
+        case 2: {
+            int choice3;
+            float meters, kilometers;
+        
+            printf("1. Meters to Kilometers\n");
+            printf("2. Kilometers to Meters\n");
+            printf("Enter Your Choice (1-2): ");
+            scanf("%d", &choice3);
+        
+            switch(choice3) {
+                case 1:
+                    printf("Enter Meters: ");
+                    scanf("%f", &meters);
+                    kilometers = meters / 1000;
+                    printf("%.2f Meters is %.2f Kilometers\n", meters, kilometers);
+                    break;
+                case 2:
+                    printf("Enter Kilometers: ");
+                    scanf("%f", &kilometers);
+                    meters = kilometers * 1000;
+                    printf("%.2f Kilometers is %.2f Meters\n", kilometers, meters);
+                    break;
+                default:
+                    printf("Invalid choice\n");
+            }
+            break;
+        }
+        case 3: {
+            float distance, time, speed;
+            
+            printf("Enter Distance in Meters: ");
+            scanf("%f", &distance);
+            printf("Enter Time in Seconds: ");
+            scanf("%f", &time);
+            
+            if (time != 0) {
+                speed = distance / time;
+                printf("Speed is %.2f meters per second\n", speed);
+            } else {
+                printf("Time cannot be zero\n");
+            }
+            break;
+        }
+        case 4: {
+            float distance, speed, time;
+            
+            printf("Enter Distance in Meters: ");
+            scanf("%f", &distance);
+            printf("Enter Speed in Meters per Second: ");
+            scanf("%f", &speed);
+            
+            if (speed != 0) {
+                time = distance / speed;
+                printf("Time is %.2f seconds\n", time);
+            } else {
+                printf("Speed cannot be zero\n");
+            }
+            break;
+        }
+        case 5: {
+            int operation;
+            float num1, num2, result;
+            
+            printf("1. Add\n");
+            printf("2. Subtract\n");
+            printf("3. Multiply\n");
+            printf("4. Divide\n");
+            printf("Enter Your Operation (1-4): ");
+            scanf("%d", &operation);
+            
+            printf("Enter Two Numbers: ");
+            scanf("%f %f", &num1, &num2);
+            
+            switch(operation) {
+                case 1:
+                    result = num1 + num2;
+                    printf("Result: %.2f\n", result);
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    printf("Result: %.2f\n", result);
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    printf("Result: %.2f\n", result);
+                    break;
+                case 4:
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        printf("Result: %.2f\n", result);
+                    } else {
+                        printf("Cannot divide by zero\n");
+                    }
+                    break;
+                default:
+                    printf("Invalid operation\n");
+            }
+            break;
+        }
+        default:
+            printf("Invalid choice\n");
+    }
+    
+    printf("\nDo You To Use Other Tools?");
+    scanf(" %c", &z);
+} while ( z == 'y' || z == 'Y');
+    return 0;
+}
