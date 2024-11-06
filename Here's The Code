@@ -4,14 +4,14 @@ int main() {
     int choice;
     char z;
 do {
-    printf("\n\n\nWelcome!\n");
+    printf("\n\nWelcome!\n");
     printf("Choose The Tool You Want To Use:\n");
     printf("1. Currency Converter\n");
     printf("2. Meters To Kilometers Converter\n");
     printf("3. Calculate Speed\n");
     printf("4. Calculate Time\n");
     printf("5. Basic Calculator\n");
-    printf("Enter Your Choice (1-5): ");
+    printf("\nEnter Your Choice (1-5): ");
     scanf("%d", &choice);
     
     switch(choice) {
@@ -23,7 +23,7 @@ do {
             
             printf("1. USD to PHP\n");
             printf("2. PHP to USD\n");
-            printf("Enter Your Choice (1-2): ");
+            printf("\nEnter Your Choice (1-2): ");
             scanf("%d", &choice2);
             
             switch(choice2) {
@@ -50,7 +50,7 @@ do {
         
             printf("1. Meters to Kilometers\n");
             printf("2. Kilometers to Meters\n");
-            printf("Enter Your Choice (1-2): ");
+            printf("\nEnter Your Choice (1-2): ");
             scanf("%d", &choice3);
         
             switch(choice3) {
@@ -74,7 +74,7 @@ do {
         case 3: {
             float distance, time, speed;
             
-            printf("Enter Distance in Meters: ");
+            printf("\nEnter Distance in Meters: ");
             scanf("%f", &distance);
             printf("Enter Time in Seconds: ");
             scanf("%f", &time);
@@ -90,7 +90,7 @@ do {
         case 4: {
             float distance, speed, time;
             
-            printf("Enter Distance in Meters: ");
+            printf("\nEnter Distance in Meters: ");
             scanf("%f", &distance);
             printf("Enter Speed in Meters per Second: ");
             scanf("%f", &speed);
@@ -107,16 +107,17 @@ do {
             int operation;
             float num1, num2, result;
             
-            printf("1. Add\n");
+            printf("\n1. Add\n");
             printf("2. Subtract\n");
             printf("3. Multiply\n");
             printf("4. Divide\n");
             printf("Enter Your Operation (1-4): ");
             scanf("%d", &operation);
             
-            printf("Enter Two Numbers: ");
-            scanf("%f %f", &num1, &num2);
-            
+            printf("\nEnter Your First Number: ");
+            scanf(" %f", &num1);
+            printf("Enter Your Second Number:");
+            scanf(" %f", &num2);
             switch(operation) {
                 case 1:
                     result = num1 + num2;
@@ -147,7 +148,7 @@ do {
             printf("Invalid choice\n");
     }
     
-    printf("\nDo You To Use Other Tools?");
+    printf("\nDo You To Use Other Tools?; ");
     scanf(" %c", &z);
 } while ( z == 'y' || z == 'Y');
     return 0;
